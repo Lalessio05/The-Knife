@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.RestaurantCardController">
+
+    <!-- Immagine -->
+    <ImageView fx:id="imageView"
+               fitWidth="400" fitHeight="250"
+    />
+
+    <!-- Overlay sfumato -->
+    <Rectangle width="400" height="250">
+        <fill>
+            <LinearGradient endX="0">
+                <stops>
+                    <Stop offset="0.7" color="transparent"/>
+                    <Stop offset="1" color="rgba(0,0,0,0.7)"/>
+                </stops>
+            </LinearGradient>
+        </fill>
+    </Rectangle>
+
+    <!-- Testo in basso -->
+    <VBox alignment="BOTTOM_LEFT" spacing="5" style="-fx-padding: 0 0 10 10;" prefHeight="250">
+        <Text fx:id="restaurantName" fill="white" style="-fx-font-size: 24px; -fx-font-family: Arial;"/>
+    </VBox>
+
+</StackPane>
