@@ -1,4 +1,4 @@
-package org.cupid404;
+package org.cupid404.ui.pageControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -6,10 +6,10 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.cupid404.ui.componentControllers.RestaurantCardController;
 import org.cupid404.model.Restaurant;
 import org.cupid404.service.RestaurantService;
 
-import java.io.IOException;
 import java.util.List;
 
 public class MainViewController {

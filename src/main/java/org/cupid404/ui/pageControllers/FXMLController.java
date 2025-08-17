@@ -1,4 +1,4 @@
-package org.cupid404;
+package org.cupid404.ui.pageControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

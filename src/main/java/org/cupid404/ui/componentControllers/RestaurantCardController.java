@@ -1,4 +1,4 @@
-package org.cupid404;
+package org.cupid404.ui.componentControllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;

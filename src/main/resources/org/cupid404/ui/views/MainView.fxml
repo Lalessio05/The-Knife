@@ -2,6 +2,6 @@
 
 <?import javafx.scene.layout.FlowPane?>
 
-<FlowPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.MainViewController"
+<FlowPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.ui.pageControllers.MainViewController"
           fx:id="cardContainer" hgap="15" vgap="15" style="-fx-padding: 15;">
 </FlowPane>
