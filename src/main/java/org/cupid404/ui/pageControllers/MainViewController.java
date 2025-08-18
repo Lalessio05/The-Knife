@@ -24,8 +24,8 @@ public class MainViewController {
         // Popoliamo la UI
         try {
         for (Restaurant r : restaurants) {
-
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/components/RestaurantCard.fxml"));
+                //TODO Cercare di implementare in maniera migliore un sistema di caricamento dei file fxml
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../components/RestaurantCard.fxml"));
                 StackPane card = loader.load();
 
                 RestaurantCardController controller = loader.getController();
