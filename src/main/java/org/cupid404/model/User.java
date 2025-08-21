@@ -17,10 +17,28 @@ public class User {
     @JsonProperty("RestaurantList")
     public LinkedList<Restaurant> restaurantList;
     @JsonProperty("RewiewList")
-    public LinkedList<Review> reviewList;
+    public LinkedList<Review> reviewList; //lista recensioni dell'utente
+    @JsonProperty("UserID")
+    public int userID; //identificativo utente univoco
 
 
+    public String getName() {
+        return name;
+    }
+    public String getSrname() {
+        return surname;
+    }
     public String getUsername() {
         return username;
     }
+    public LocalDate getBirth() {
+        return birth;
+    }
+    public LinkedList<Restaurant> getRestaurantList() {
+        return restaurantList;
+    }
+    public LinkedList<Review> getReviewList() {
+        return reviewList;
+    }
+
 }
