@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
 
-<StackPane fx:id="root" xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.ui.componentControllers.RestaurantCardController">
+<VBox fx:id="root"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.cupid404.ui.componentControllers.RestaurantCardController"
+      prefWidth="300" prefHeight="400"
+      stylesheets="@../css/RestaurantCardStylesheet.css"
+      styleClass="main">
 
-    <!-- Immagine -->
-    <ImageView fx:id="imageView"
-               fitWidth="400" fitHeight="250"
-    />
+    <!-- Card container -->
+    <VBox styleClass="card" spacing="10" alignment="CENTER">
 
-    <!-- Overlay sfumato -->
-    <Rectangle width="400" height="250">
-        <fill>
-            <LinearGradient endX="0">
-                <stops>
-                    <Stop offset="0.7" color="transparent"/>
-                    <Stop offset="1" color="rgba(0,0,0,0.7)"/>
-                </stops>
-            </LinearGradient>
-        </fill>
-    </Rectangle>
+        <!-- Image -->
+        <ImageView fx:id="cardImage" fitWidth="280" fitHeight="180" styleClass="card-img"/>
 
-    <!-- Testo in basso -->
-    <VBox alignment="BOTTOM_LEFT" spacing="5" style="-fx-padding: 0 0 10 10;" prefHeight="250">
-        <Text fx:id="restaurantName" fill="white" style="-fx-font-size: 24px; -fx-font-family: Arial;"/>
+        <!-- Content -->
+        <VBox styleClass="card-content" spacing="5" alignment="CENTER">
+            <HBox spacing="100"/>
+            <Label fx:id="titleLabel"   styleClass="title"/>
+            <Label fx:id="addressLabel" styleClass="address"/>
+            <Label fx:id="priceLabel"   styleClass="price"/>
+
+            <!-- Footer -->
+            <Label fx:id="ratingLabel"   styleClass="rating"/>
+        </VBox>
     </VBox>
-
-</StackPane>
+</VBox>

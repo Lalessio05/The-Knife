@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.FlowPane?>
 
-<FlowPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.ui.pageControllers.MainViewController"
-          fx:id="cardContainer" hgap="15" vgap="15" style="-fx-padding: 15;">
-</FlowPane>
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.cupid404.ui.pageControllers.MainViewController"
+            fitToWidth="true" style="-fx-padding: 15;">
+        <FlowPane fx:id="cardContainer" hgap="15" vgap="15"/>
+</ScrollPane>
