@@ -2,7 +2,8 @@ package org.cupid404.ui.pageControllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.*;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.cupid404.ui.componentControllers.RestaurantCardController;
@@ -14,7 +15,6 @@ import java.util.List;
 public class MainViewController {
     protected static final Logger logger = LogManager.getLogger();
     private final RestaurantService restaurantService = new RestaurantService();
-//    private final ReviewService reviewService = new ReviewService();
     @FXML
     private FlowPane cardContainer; // container in cui mettiamo le card
 
@@ -25,19 +25,11 @@ public class MainViewController {
         try {
         for (Restaurant r : restaurants) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../../ui/components/RestaurantCard.fxml"));
-            VBox card = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/components/RestaurantCard.fxml"));
+                StackPane card = loader.load();
 
                 RestaurantCardController controller = loader.getController();
-            controller.setRestaurantData(
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Mark_Knopfler_NEC_2008_02_%28cropped%29.jpg/1024px-Mark_Knopfler_NEC_2008_02_%28cropped%29.jpg",// immagine
-                    r.getName(),       // titolo
-                    r.getCity(),       // indirizzo
-                    "Prezzo medio "+ r.getAveragePrice() + " €",   // prezzo
-//                  reviewService.getAverageRating(r.getID()),                  // rating
-                    "4.2"                  // rating
-            );
-
+                controller.setRestaurantData(r.getName(), "file:src/main/resources/org/cupid404/images/img.png" );
 
                 cardContainer.getChildren().add(card);
         }
