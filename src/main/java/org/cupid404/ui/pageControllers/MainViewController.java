@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.cupid404.ui.componentControllers.RestaurantCardController;
@@ -16,20 +17,25 @@ public class MainViewController {
     protected static final Logger logger = LogManager.getLogger();
     private final RestaurantService restaurantService = new RestaurantService();
     @FXML
-    private FlowPane cardContainer; // container in cui mettiamo le card
+    private FlowPane cardContainer;
 
     public void initialize() {
-        // Lista di ristoranti di esempio (qui in futuro potrai caricarla da CSV)
         List<Restaurant> restaurants = restaurantService.getRestaurants();
-        // Popoliamo la UI
         try {
         for (Restaurant r : restaurants) {
 
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("ui/components/RestaurantCard.fxml"));
-                StackPane card = loader.load();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("../components/RestaurantCard.fxml"));
+                VBox card = loader.load();
 
                 RestaurantCardController controller = loader.getController();
-                controller.setRestaurantData(r.getName(), "file:src/main/resources/org/cupid404/images/img.png" );
+                controller.setRestaurantData(
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Mark_Knopfler_NEC_2008_02_%28cropped%29.jpg/1024px-Mark_Knopfler_NEC_2008_02_%28cropped%29.jpg",
+                        r.getName(),
+                        r.getAddress(),
+                        r.getAveragePrice() + " €",
+                        5 + " ★"
+
+                );
 
                 cardContainer.getChildren().add(card);
         }
