@@ -3,7 +3,7 @@ package org.cupid404.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.LocalDate;
-import java.util.LinkedList;;
+import java.util.List;;
 
 public class User {
     @JsonProperty("Name")
@@ -15,9 +15,9 @@ public class User {
     @JsonProperty("Birth")
     public LocalDate birth;
     @JsonProperty("RestaurantList")
-    public LinkedList<Restaurant> restaurantList;
+    public List<Restaurant> restaurantList;
     @JsonProperty("RewiewList")
-    public LinkedList<Review> reviewList; //lista recensioni dell'utente
+    public List<Review> reviewList; //lista recensioni dell'utente
     @JsonProperty("UserID")
     public int userID; //identificativo utente univoco
 
@@ -25,7 +25,7 @@ public class User {
     public String getName() {
         return name;
     }
-    public String getSrname() {
+    public String getSurname() {
         return surname;
     }
     public String getUsername() {
@@ -34,10 +34,10 @@ public class User {
     public LocalDate getBirth() {
         return birth;
     }
-    public LinkedList<Restaurant> getRestaurantList() {
+    public List<Restaurant> getRestaurantList() {
         return restaurantList;
     }
-    public LinkedList<Review> getReviewList() {
+    public List<Review> getReviewList() {
         return reviewList;
     }
 
