@@ -16,4 +16,9 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurantDAO.getRestaurants();
     }
+    //TODO
+    public List<Restaurant> findRestaurant(String name) {return  null;} //trova i ristoranti filtrati per nome
+    public void addRestaurant(Restaurant restaurant) { } //aggiunge un ristorante alla lista dei ristoranti presenti
+
+
 }
